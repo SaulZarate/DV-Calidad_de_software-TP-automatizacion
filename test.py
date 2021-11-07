@@ -1,6 +1,7 @@
 from selenium import webdriver
 import time
 from data import datos
+from config import configuracion
 
 def login(driver) -> bool:
     # Ir al sitio web
@@ -40,7 +41,7 @@ def login(driver) -> bool:
     #return "¡Vamos a empezar," in text_title or "Welcome, " in text_title
 
 def test_login():
-    driver = webdriver.Chrome(executable_path="C:\driverChrome\chromedriver.exe")
+    driver = webdriver.Chrome(executable_path=configuracion["path_driver_chrome"])
     resultado_del_test = '\n\t'
     
     if login(driver):
@@ -54,7 +55,7 @@ def test_login():
     driver.close()
 
 def test_guardar_como_favorito_alojamiento():
-    driver = webdriver.Chrome(executable_path="C:\driverChrome\chromedriver.exe")
+    driver = webdriver.Chrome(executable_path=configuracion["path_driver_chrome"])
     resultado_del_test = '\n\tResultado de test_guardar_como_favorito_alojamiento: '
 
     if not login(driver):
@@ -137,4 +138,4 @@ def test_guardar_como_favorito_alojamiento():
     driver.close()
 
 test_login()
-test_guardar_como_favorito_alojamiento()
+#test_guardar_como_favorito_alojamiento()

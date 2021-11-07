@@ -138,4 +138,4 @@ def test_guardar_como_favorito_alojamiento():
     driver.close()
 
 test_login()
-#test_guardar_como_favorito_alojamiento()
+test_guardar_como_favorito_alojamiento()
